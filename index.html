@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JM LASHES | Studio de Belleza</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">JM <span>LASHES</span></div>
+    <ul class="nav-links">
+      <li><a href="#" onclick="closeAll()">Inicio</a></li>
+      <li><a href="#" onclick="openOverlay('overlay-servicios'); return false;">Servicios</a></li>
+      <li><a href="#" onclick="openOverlay('overlay-citas'); return false;" class="btn-nav">Agendar Cita</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menú">&#9776;</button>
+  </nav>
+
+  <!-- HERO (página principal, pantalla completa) -->
+  <section class="hero" id="inicio">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-sub">Studio de Belleza</p>
+      <h1>JM <span>LASHES</span></h1>
+      <p class="hero-desc">Realzamos tu belleza natural con técnicas de vanguardia y productos premium.</p>
+      <a href="#" onclick="openOverlay('overlay-citas'); return false;" class="btn-primary">Agenda tu Cita</a>
+      <a href="#" onclick="openOverlay('overlay-servicios'); return false;" class="btn-secondary">Ver Servicios</a>
+    </div>
+  </section>
+
+  <!-- OVERLAY: SERVICIOS -->
+  <div class="overlay" id="overlay-servicios">
+    <div class="overlay-header">
+      <div class="nav-logo">JM <span>LASHES</span></div>
+      <button class="overlay-close" onclick="closeOverlay('overlay-servicios')">&times;</button>
+    </div>
+    <div class="overlay-body">
+      <div class="section-header">
+        <p class="section-tag">Lo que ofrecemos</p>
+        <h2>Nuestros Servicios</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card service-card--clickable" onclick="openLightbox()">
+          <div class="service-icon">&#10024;</div>
+          <h3>Extensiones de Pestañas</h3>
+          <p>Clásicas, volumen ruso y mega volumen. Diseñadas para realzar tu mirada con naturalidad y duración.</p>
+          <div class="card-photos-preview">
+            <img src="ext1.jpeg" alt="Extensiones 1" onerror="this.style.display='none'" />
+            <img src="ext2.jpg" alt="Extensiones 2" onerror="this.style.display='none'" />
+            <img src="ext3.jpg" alt="Extensiones 3" onerror="this.style.display='none'" />
+          </div>
+          <span class="service-tag">&#128247; Ver fotos del servicio</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">&#127804;</div>
+          <h3>Lash Lifting</h3>
+          <p>Curva y levanta tus pestañas naturales. Efecto rizador permanente por semanas sin necesidad de rizo diario.</p>
+          <span class="service-tag">Natural & Duradero</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">&#127775;</div>
+          <h3>Laminado de Ceja</h3>
+          <p>Define y disciplina tus cejas con un acabado impecable. El secreto para cejas perfectas todo el día.</p>
+          <span class="service-tag">Diseño Personalizado</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">&#128141;</div>
+          <h3>Diseño de Uñas</h3>
+          <p>Nail art, semipermanente y acrílicas. Creamos diseños únicos adaptados a tu estilo y personalidad.</p>
+          <span class="service-tag">Arte en tus Manos</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">&#128144;</div>
+          <h3>Tratamientos Capilares</h3>
+          <p>Hidratación, keratina, botox capilar y más. Devuelve la vida y brillo a tu cabello con nuestros tratamientos.</p>
+          <span class="service-tag">Cabello Radiante</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">&#9749;</div>
+          <h3>Masajes</h3>
+          <p>Relaja cuerpo y mente con nuestros masajes relajantes y terapéuticos. Un momento solo para ti.</p>
+          <span class="service-tag">Bienestar Total</span>
+        </div>
+
+      </div>
+
+      <div class="overlay-cta">
+        <p>¿Lista para mimarte?</p>
+        <a href="#" onclick="openOverlay('overlay-citas'); return false;" class="btn-primary">Agenda tu Cita Ahora</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- OVERLAY: CITAS -->
+  <div class="overlay overlay-dark" id="overlay-citas">
+    <div class="overlay-header">
+      <div class="nav-logo">JM <span>LASHES</span></div>
+      <button class="overlay-close" onclick="closeOverlay('overlay-citas')">&times;</button>
+    </div>
+    <div class="overlay-body">
+      <div class="section-header">
+        <p class="section-tag">Reserva tu momento</p>
+        <h2>Agenda tu Cita</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="cita-wrapper">
+        <div class="cita-info">
+          <h3>¿Por qué elegirnos?</h3>
+          <ul class="beneficios">
+            <li><span>&#10003;</span> Profesionales certificadas</li>
+            <li><span>&#10003;</span> Productos de alta calidad</li>
+            <li><span>&#10003;</span> Ambiente relajante y exclusivo</li>
+            <li><span>&#10003;</span> Atención personalizada</li>
+            <li><span>&#10003;</span> Resultados garantizados</li>
+          </ul>
+          <div class="horario">
+            <h4>Horario de Atención</h4>
+            <p>Lunes a Viernes: 9:00 am – 7:00 pm</p>
+            <p>Sábado: 9:00 am – 5:00 pm</p>
+            <p>Domingo: Con cita previa</p>
+          </div>
+          <div class="horario" style="margin-top:1.5rem;">
+            <h4>Contacto</h4>
+            <p>&#128241; <a href="tel:+528661732880">+52 866 173 2880</a></p>
+            <p>&#128205; Privada Yucatán 1418, Col. Regina</p>
+            <p style="margin-top:0.6rem;">
+              <a href="https://www.instagram.com/j_m_lashes/" target="_blank" class="social-btn">Instagram @j_m_lashes</a>
+            </p>
+          </div>
+        </div>
+
+        <form class="cita-form" id="citaForm">
+          <div class="form-group">
+            <label for="nombre">Nombre completo *</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+          </div>
+          <div class="form-group">
+            <label for="telefono">Teléfono / WhatsApp *</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="Tu número" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="tu@correo.com" />
+          </div>
+          <div class="form-group">
+            <label for="servicio">Servicio de interés *</label>
+            <select id="servicio" name="servicio" required>
+              <option value="" disabled selected>Selecciona un servicio</option>
+              <option value="extensiones">Extensiones de Pestañas</option>
+              <option value="lash-lift">Lash Lifting</option>
+              <option value="cejas">Laminado de Ceja</option>
+              <option value="unas">Diseño de Uñas</option>
+              <option value="capilar">Tratamientos Capilares</option>
+              <option value="masaje">Masajes</option>
+              <option value="otro">Otro / Consultar</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fecha">Fecha preferida *</label>
+              <input type="date" id="fecha" name="fecha" required />
+            </div>
+            <div class="form-group">
+              <label for="hora">Hora preferida *</label>
+              <select id="hora" name="hora" required>
+                <option value="" disabled selected>Selecciona</option>
+                <option>9:00 am</option>
+                <option>10:00 am</option>
+                <option>11:00 am</option>
+                <option>12:00 pm</option>
+                <option>1:00 pm</option>
+                <option>2:00 pm</option>
+                <option>3:00 pm</option>
+                <option>4:00 pm</option>
+                <option>5:00 pm</option>
+                <option>6:00 pm</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="notas">Notas adicionales</label>
+            <textarea id="notas" name="notas" rows="3" placeholder="¿Tienes alguna pregunta o petición especial?"></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Solicitar Cita &rarr;</button>
+          <p class="form-note">Te confirmaremos tu cita por WhatsApp o correo electrónico.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX EXTENSIONES -->
+  <div class="lightbox" id="lightbox" onclick="closeLightboxIfBg(event)">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <button class="lightbox-arrow lightbox-prev" onclick="lightboxNav(-1)">&#8249;</button>
+    <div class="lightbox-inner">
+      <img id="lightbox-img" src="" alt="Extensiones de Pestañas" />
+      <div class="lightbox-caption">
+        <p id="lightbox-title">Extensiones de Pestañas</p>
+        <div class="lightbox-dots" id="lightbox-dots"></div>
+      </div>
+    </div>
+    <button class="lightbox-arrow lightbox-next" onclick="lightboxNav(1)">&#8250;</button>
+  </div>
+
+  <!-- MODAL CONFIRMACIÓN -->
+  <div class="modal" id="modal">
+    <div class="modal-box">
+      <div class="modal-icon">&#10003;</div>
+      <h3>¡Solicitud Enviada!</h3>
+      <p>Recibimos tu solicitud de cita. Te contactaremos pronto para confirmar tu reserva.</p>
+      <button class="btn-primary" id="modalClose">Cerrar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -47,7 +47,6 @@
       <div class="services-grid">
 
         <div class="service-card service-card--clickable" onclick="openLightbox()">
-          <div class="service-icon">&#10024;</div>
           <h3>Extensiones de Pestañas</h3>
           <p>Clásicas, volumen ruso y mega volumen. Diseñadas para realzar tu mirada con naturalidad y duración.</p>
           <div class="card-photos-preview">
@@ -59,35 +58,30 @@
         </div>
 
         <div class="service-card">
-          <div class="service-icon">&#127804;</div>
           <h3>Lash Lifting</h3>
           <p>Levanta tus pestañas naturales. Efecto rizador permanente por semanas sin necesidad de rizo diario.</p>
           <span class="service-tag">Natural & Duradero</span>
         </div>
 
         <div class="service-card">
-          <div class="service-icon">&#127775;</div>
           <h3>Laminado de Ceja</h3>
           <p>Define y disciplina tus cejas con un acabado impecable. El secreto para cejas perfectas todo el día.</p>
           <span class="service-tag">Diseño Personalizado</span>
         </div>
 
         <div class="service-card">
-          <div class="service-icon">&#128141;</div>
           <h3>Diseño de Uñas</h3>
           <p>Nail art, semipermanente y acrílicas. Creamos diseños únicos adaptados a tu estilo y personalidad.</p>
           <span class="service-tag">Arte en tus Manos</span>
         </div>
 
         <div class="service-card">
-          <div class="service-icon">&#128144;</div>
           <h3>Tratamientos Capilares</h3>
           <p>Hidratación, keratina, botox capilar y más. Devuelve la vida y brillo a tu cabello con nuestros tratamientos.</p>
           <span class="service-tag">Cabello Radiante</span>
         </div>
 
         <div class="service-card">
-          <div class="service-icon">&#9749;</div>
           <h3>Masajes</h3>
           <p>Relaja cuerpo y mente con nuestros masajes relajantes y terapéuticos. Un momento solo para ti.</p>
           <span class="service-tag">Bienestar Total</span>
@@ -140,61 +134,18 @@
           </div>
         </div>
 
-        <form class="cita-form" id="citaForm">
-          <div class="form-group">
-            <label for="nombre">Nombre completo *</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+        <div class="cal-selector">
+          <p class="cal-prompt">Selecciona el servicio para ver disponibilidad:</p>
+          <div class="cal-buttons">
+            <button onclick="loadCal('jmstudio/extensiones-de-pestanas', this)">Extensiones de Pestañas</button>
+            <button onclick="loadCal('jmstudio/lash-lifting', this)">Lash Lifting</button>
+            <button onclick="loadCal('jmstudio/laminado-ceja', this)">Laminado de Ceja</button>
+            <button onclick="loadCal('jmstudio/diseno-de-unas', this)">Diseño de Uñas</button>
+            <button onclick="loadCal('jmstudio/tratamientos-capilares', this)">Tratamientos Capilares</button>
+            <button onclick="loadCal('jmstudio/masajes', this)">Masajes</button>
           </div>
-          <div class="form-group">
-            <label for="telefono">Teléfono / WhatsApp *</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="Tu número" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Correo electrónico</label>
-            <input type="email" id="email" name="email" placeholder="tu@correo.com" />
-          </div>
-          <div class="form-group">
-            <label for="servicio">Servicio de interés *</label>
-            <select id="servicio" name="servicio" required>
-              <option value="" disabled selected>Selecciona un servicio</option>
-              <option value="extensiones">Extensiones de Pestañas</option>
-              <option value="lash-lift">Lash Lifting</option>
-              <option value="cejas">Laminado de Ceja</option>
-              <option value="unas">Diseño de Uñas</option>
-              <option value="capilar">Tratamientos Capilares</option>
-              <option value="masaje">Masajes</option>
-              <option value="otro">Otro / Consultar</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="fecha">Fecha preferida *</label>
-              <input type="date" id="fecha" name="fecha" required />
-            </div>
-            <div class="form-group">
-              <label for="hora">Hora preferida *</label>
-              <select id="hora" name="hora" required>
-                <option value="" disabled selected>Selecciona</option>
-                <option>9:00 am</option>
-                <option>10:00 am</option>
-                <option>11:00 am</option>
-                <option>12:00 pm</option>
-                <option>1:00 pm</option>
-                <option>2:00 pm</option>
-                <option>3:00 pm</option>
-                <option>4:00 pm</option>
-                <option>5:00 pm</option>
-                <option>6:00 pm</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="notas">Notas adicionales</label>
-            <textarea id="notas" name="notas" rows="3" placeholder="¿Tienes alguna pregunta o petición especial?"></textarea>
-          </div>
-          <button type="submit" class="btn-submit">Solicitar Cita &rarr;</button>
-          <p class="form-note">Te confirmaremos tu cita por WhatsApp o correo electrónico.</p>
-        </form>
+          <iframe id="cal-frame" src="" style="display:none;" title="Calendario de citas"></iframe>
+        </div>
       </div>
     </div>
   </div>

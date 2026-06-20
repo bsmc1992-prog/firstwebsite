@@ -67,6 +67,15 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape')     closeLightbox();
 });
 
+// ===== CAL.COM =====
+function loadCal(service, btn) {
+  const frame = document.getElementById('cal-frame');
+  frame.src = 'https://cal.com/' + service;
+  frame.style.display = 'block';
+  document.querySelectorAll('.cal-buttons button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
 // ===== MENÚ HAMBURGUESA (móvil) =====
 // Menú hamburguesa (móvil)
 const hamburger = document.getElementById('hamburger');
@@ -78,26 +87,3 @@ navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => navLinks.classList.remove('open'));
 });
 
-// Fecha mínima = hoy
-const fechaInput = document.getElementById('fecha');
-const hoy = new Date().toISOString().split('T')[0];
-fechaInput.setAttribute('min', hoy);
-
-// Formulario de citas
-const citaForm = document.getElementById('citaForm');
-const modal = document.getElementById('modal');
-const modalClose = document.getElementById('modalClose');
-
-citaForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  modal.classList.add('active');
-  citaForm.reset();
-});
-
-modalClose.addEventListener('click', () => {
-  modal.classList.remove('active');
-});
-
-modal.addEventListener('click', (e) => {
-  if (e.target === modal) modal.classList.remove('active');
-});

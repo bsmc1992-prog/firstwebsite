@@ -124,6 +124,20 @@
         <h2>Agenda tu Cita</h2>
         <div class="divider"></div>
       </div>
+
+      <div class="servicio-selector">
+        <h3 class="selector-titulo">¿Qué servicio necesitas?</h3>
+        <p class="selector-sub">Selecciona un servicio para ver la disponibilidad</p>
+        <div class="cal-buttons">
+          <button onclick="loadCal('jmstudio/extensiones-de-pestanas', this)">Extensiones de Pestañas</button>
+          <button onclick="loadCal('jmstudio/lash-lifting', this)">Lash Lifting</button>
+          <button onclick="loadCal('jmstudio/laminado-ceja', this)">Laminado de Ceja</button>
+          <button onclick="loadCal('jmstudio/diseno-de-unas', this)">Diseño de Uñas</button>
+          <button onclick="loadCal('jmstudio/tratamientos-capilares', this)">Tratamientos Capilares</button>
+          <button onclick="loadCal('jmstudio/masajes', this)">Masajes</button>
+        </div>
+      </div>
+
       <div class="cita-wrapper">
         <div class="cita-info">
           <h3>¿Por qué elegirnos?</h3>
@@ -149,19 +163,7 @@
             </p>
           </div>
         </div>
-
-        <div class="cal-selector">
-          <p class="cal-prompt">Selecciona el servicio para ver disponibilidad:</p>
-          <div class="cal-buttons">
-            <button onclick="loadCal('jmstudio/extensiones-de-pestanas', this)">Extensiones de Pestañas</button>
-            <button onclick="loadCal('jmstudio/lash-lifting', this)">Lash Lifting</button>
-            <button onclick="loadCal('jmstudio/laminado-ceja', this)">Laminado de Ceja</button>
-            <button onclick="loadCal('jmstudio/diseno-de-unas', this)">Diseño de Uñas</button>
-            <button onclick="loadCal('jmstudio/tratamientos-capilares', this)">Tratamientos Capilares</button>
-            <button onclick="loadCal('jmstudio/masajes', this)">Masajes</button>
-          </div>
-          <iframe id="cal-frame" src="" style="display:none;" title="Calendario de citas"></iframe>
-        </div>
+        <iframe id="cal-frame" src="" style="display:none;" title="Calendario de citas"></iframe>
       </div>
     </div>
   </div>

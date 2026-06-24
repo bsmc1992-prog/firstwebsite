@@ -89,6 +89,11 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape')     closeLightbox();
 });
 
+// ===== PWA =====
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js'));
+}
+
 // ===== CAL.COM =====
 function loadCal(service, btn) {
   const frame = document.getElementById('cal-frame');

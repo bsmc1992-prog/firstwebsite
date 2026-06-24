@@ -23,6 +23,9 @@
   <!-- HERO (página principal, pantalla completa) -->
   <section class="hero" id="inicio">
     <div class="hero-overlay"></div>
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
     <div class="hero-content">
       <p class="hero-sub">Studio de Belleza</p>
       <h1>JM <span>LASHES</span></h1>
@@ -57,10 +60,15 @@
           <span class="service-tag">&#128247; Ver fotos del servicio</span>
         </div>
 
-        <div class="service-card">
+        <div class="service-card service-card--clickable" onclick="openLightbox('lifting')">
           <h3>Lash Lifting</h3>
           <p>Levanta tus pestañas naturales. Efecto rizador permanente por semanas sin necesidad de rizo diario.</p>
-          <span class="service-tag">Natural & Duradero</span>
+          <div class="card-photos-preview">
+            <img src="lifting.jpeg" alt="Lash Lifting 1" onerror="this.style.display='none'" />
+            <img src="lifting2.jpeg" alt="Lash Lifting 2" onerror="this.style.display='none'" />
+            <img src="lifting3.jpeg" alt="Lash Lifting 3" onerror="this.style.display='none'" />
+          </div>
+          <span class="service-tag">&#128247; Ver fotos del servicio</span>
         </div>
 
         <div class="service-card">
@@ -69,16 +77,24 @@
           <span class="service-tag">Diseño Personalizado</span>
         </div>
 
-        <div class="service-card">
+        <div class="service-card service-card--clickable" onclick="openLightbox('unas')">
           <h3>Diseño de Uñas</h3>
           <p>Nail art, semipermanente y acrílicas. Creamos diseños únicos adaptados a tu estilo y personalidad.</p>
-          <span class="service-tag">Arte en tus Manos</span>
+          <div class="card-photos-preview">
+            <img src="unas1.jpeg" alt="Uñas 1" onerror="this.style.display='none'" />
+            <img src="unas2.jpeg" alt="Uñas 2" onerror="this.style.display='none'" />
+            <img src="unas3.jpeg" alt="Uñas 3" onerror="this.style.display='none'" />
+          </div>
+          <span class="service-tag">&#128247; Ver fotos del servicio</span>
         </div>
 
-        <div class="service-card">
+        <div class="service-card service-card--clickable" onclick="openLightbox('capilar')">
           <h3>Tratamientos Capilares</h3>
           <p>Hidratación, keratina, botox capilar y más. Devuelve la vida y brillo a tu cabello con nuestros tratamientos.</p>
-          <span class="service-tag">Cabello Radiante</span>
+          <div class="card-photos-preview">
+            <img src="capilar.jpeg" alt="Tratamiento Capilar" onerror="this.style.display='none'" />
+          </div>
+          <span class="service-tag">&#128247; Ver fotos del servicio</span>
         </div>
 
         <div class="service-card">
@@ -173,6 +189,19 @@
       <button class="btn-primary" id="modalClose">Cerrar</button>
     </div>
   </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-brand">JM <em>LASHES</em></span>
+      <div class="footer-links">
+        <a href="tel:+528661732880">+52 866 173 2880</a>
+        <span class="footer-dot">·</span>
+        <a href="https://www.instagram.com/j_m_lashes/" target="_blank">@j_m_lashes</a>
+        <span class="footer-dot">·</span>
+        <span>Privada Yucatán 1418, Col. Regina</span>
+      </div>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>

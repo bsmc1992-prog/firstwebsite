@@ -20,15 +20,37 @@ function closeAll() {
   document.getElementById('navbar').classList.remove('scrolled');
 }
 
-// ===== LIGHTBOX EXTENSIONES =====
-const lbFotos = [
-  { src: 'ext1.jpeg', titulo: 'Extensiones · Clásicas' },
-  { src: 'ext2.jpg', titulo: 'Extensiones · Volumen Ruso' },
-  { src: 'ext3.jpg', titulo: 'Extensiones · Mega Volumen' },
-];
+// ===== LIGHTBOX =====
+const serviceFotos = {
+  extensiones: [
+    { src: 'ext1.jpeg', titulo: 'Extensiones · Clásicas' },
+    { src: 'ext2.jpg',  titulo: 'Extensiones · Volumen Ruso' },
+    { src: 'ext3.jpg',  titulo: 'Extensiones · Mega Volumen' },
+  ],
+  lifting: [
+    { src: 'lifting.jpeg',  titulo: 'Lash Lifting' },
+    { src: 'lifting2.jpeg', titulo: 'Lash Lifting' },
+    { src: 'lifting3.jpeg', titulo: 'Lash Lifting' },
+    { src: 'lifting4.jpeg', titulo: 'Lash Lifting' },
+  ],
+  unas: [
+    { src: 'unas1.jpeg', titulo: 'Diseño de Uñas' },
+    { src: 'unas2.jpeg', titulo: 'Diseño de Uñas' },
+    { src: 'unas3.jpeg', titulo: 'Diseño de Uñas' },
+    { src: 'unas4.jpeg', titulo: 'Diseño de Uñas' },
+    { src: 'unas5.jpeg', titulo: 'Diseño de Uñas' },
+    { src: 'unas6.jpeg', titulo: 'Diseño de Uñas' },
+  ],
+  capilar: [
+    { src: 'capilar.jpeg', titulo: 'Tratamientos Capilares' },
+  ],
+};
+
+let lbFotos = [];
 let lbIndex = 0;
 
-function openLightbox(i) {
+function openLightbox(servicio, i) {
+  lbFotos = serviceFotos[servicio] || serviceFotos.extensiones;
   lbIndex = i || 0;
   renderLightbox();
   document.getElementById('lightbox').classList.add('active');

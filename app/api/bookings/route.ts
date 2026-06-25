@@ -12,8 +12,14 @@ export async function GET() {
 
   try {
     const res = await fetch(
-      `https://api.cal.com/v1/bookings?apiKey=${apiKey}`,
-      { cache: 'no-store' }
+      'https://api.cal.com/v2/bookings',
+      {
+        cache: 'no-store',
+        headers: {
+          'Authorization': `Bearer ${apiKey}`,
+          'cal-api-version': '2024-08-13',
+        },
+      }
     )
 
     if (!res.ok) {
@@ -24,7 +30,14 @@ export async function GET() {
     }
 
     const data = await res.json()
-    return NextResponse.json(data)
+    // v2 devuelve { status: "success", data: [...] }
+    // normalizamos status a mayúsculas para compatibilidad con el panel
+    const rawBookings = data.data ?? data.bookings ?? []
+    const bookings = rawBookings.map((b: Record<string, unknown>) => ({
+      ...b,
+      status: typeof b.status === 'string' ? b.status.toUpperCase() : b.status,
+    }))
+    return NextResponse.json({ bookings })
   } catch {
     return NextResponse.json(
       { bookings: [], error: 'No se pudo conectar con Cal.com' },

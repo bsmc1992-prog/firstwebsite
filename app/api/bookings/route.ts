@@ -35,6 +35,8 @@ export async function GET() {
     const rawBookings = data.data ?? data.bookings ?? []
     const bookings = rawBookings.map((b: Record<string, unknown>) => ({
       ...b,
+      startTime: b.startTime ?? b.start,
+      endTime:   b.endTime   ?? b.end,
       status: typeof b.status === 'string' ? b.status.toUpperCase() : b.status,
     }))
     return NextResponse.json({ bookings })
